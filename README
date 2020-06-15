@@ -1,0 +1,18 @@
+Cette librairie est un parseur HTML disponible sur sourceforge que j'ai modifié.
+J'ai modifié la ligne qui posait soucis avec un argument seek qui ne fonctionnait plus.
+J'ai aussi modifié les expressions régulières pour qu'elles soient compatible PCRE2, qui est le nouveau standard depuis PHP7.4 .
+L'ancienne syntaxe pose soucis avec des - qui doivent maintenant être échappées (\- ou /-).
+Mon utilisation de base est l'import de la classe dans le dossier /libraries/html_parse d'un joomla 3.9.x.
+Ce dossier est à créer directement.
+Et je l'utilise dans un formulaire Chronoforms V5 via une action custom code dont le source est le fichier parseur.PHP .
+Les champs du formulaire sont les suivants:
+Un champ texte nommé url qui contient l'url à parcourir
+Un champ texte nommé balise qui contient le type de balise à remonter
+une liste avec les options suivantes décrivant le code  à afficher:
+innertext (le texte interieur de la balise)
+outertext (le texte exterieur de la balise)
+xmltext (le texte au format xml)
+text (le texte au format text utf8)
+Un bouton submit.
+
+Et le code du fichier action.php doit être dans une action custom code dans l'événement onsubmit.
